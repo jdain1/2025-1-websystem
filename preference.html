@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>취향 선택 1</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    .container {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden; /* ✅ 드래그 스크롤 완전 차단 */
+    }
+    .slider {
+      width: 100%;
+      height: 200vh; /* ✅ 두 화면 높이 */
+      transition: transform 1s ease-in-out;
+    }
+    .screen {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .button-wrapper {
+      display: flex;
+      gap: 80px;
+      margin-top: 80px; /* ✅ h1 아래로 80px 이동 */
+    }
+
+    button.select-btn {
+      width: 400px;
+      height: 400px;
+      border: none;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.1s ease;
+    }
+    button.select-btn:active {
+      transform: scale(0.95);
+    }
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    button span {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    #resultBtn {
+      visibility: hidden; /* ✅ display:none → visibility로 변경 */
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      width: 200px;
+      height: 60px;
+  }
+  #resultBtn:active {
+    transform: scale(0.95);
+  }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="slider" id="slider">
+      <!-- 첫 화면 -->
+      <div class="screen">
+        <h1 id="header"></h1>
+        <div class="button-wrapper">
+          <button class="select-btn" onclick="firstSelect('관광')">
+            <video autoplay loop muted playsinline>
+              <source src="video/tour.mp4" type="video/mp4">
+            </video>
+            <span>관광</span>
+          </button>
+          <button class="select-btn" onclick="firstSelect('휴양')">
+            <video autoplay loop muted playsinline>
+              <source src="video/rest.mp4" type="video/mp4">
+            </video>
+            <span>휴양</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 두 번째 화면 -->
+      <div class="screen">
+        <h1 id="header2"></h1>
+        <div class="button-wrapper">
+          <button class="select-btn" onclick="secondSelect('뚜벅이')">
+            <video autoplay loop muted playsinline>
+              <source src="video/walk.mp4" type="video/mp4">
+            </video>
+            <span>뚜벅이</span>
+          </button>
+          <button class="select-btn" onclick="secondSelect('자차')">
+            <video autoplay loop muted playsinline>
+              <source src="video/drive.mp4" type="video/mp4">
+            </video>
+            <span>자차</span>
+          </button>
+        </div>
+        <button id="resultBtn" onclick="goResult()">결과보기</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const name = localStorage.getItem('name') || '사용자';
+    document.getElementById('header').innerText = `${name}님의 취향은?`;
+    document.getElementById('header2').innerText = `${name}님의 취향은?`;
+
+    function firstSelect(pref) {
+      localStorage.setItem('pref1', pref);
+      document.getElementById('slider').style.transform = 'translateY(-100vh)';
+    }
+
+    function secondSelect(pref) {
+      localStorage.setItem('pref2', pref);
+      document.getElementById('resultBtn').style.visibility = 'visible';  // ✅ 변경
+    }
+
+    function goResult() {
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
