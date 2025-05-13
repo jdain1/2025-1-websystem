@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>전체 지도 보기</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      background-color: #ddd;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.8em;
+    }
+    #map {
+      width: 100%;
+      height: 90vh;
+    }
+  </style>
+
+  <!-- ✅ 구글 지도 API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbMER9WUqCWwa5elJS2gL8cptzje82DQ0"></script>
+</head>
+<body>
+
+  <header>전체 추천 여행지 보기</header>
+  <div id="map"></div>
+
+  <script>
+    function initMap() {
+      // 대한민국 중심 좌표
+      const centerKorea = { lat: 35.8714, lng: 127.695 };
+
+      // 지도 생성
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: centerKorea,
+        zoom: 7
+      });
+
+      // 추천지 데이터
+      const places = [
+        {
+          name: '제주도',
+          position: { lat: 33.4996, lng: 126.5312 },
+          url: 'destination1.html'
+        },
+        {
+          name: '인천',
+          position: { lat: 37.4563, lng: 126.7052 },
+          url: 'destination2.html'
+        },
+        {
+          name: '거제도',
+          position: { lat: 34.8800, lng: 128.6217 },
+          url: 'destination3.html'
+        },
+        {
+          name: '부산',
+          position: { lat: 35.1796, lng: 129.0756 },
+          url: 'destination4.html'
+        }
+      ];
+
+      // 마커 찍기
+      places.forEach(place => {
+        const marker = new google.maps.Marker({
+          position: place.position,
+          map: map,
+          title: place.name
+        });
+
+        // 마커 클릭 시 해당 destination 페이지로 이동
+        marker.addListener('click', () => {
+          window.location.href = place.url;
+        });
+      });
+    }
+
+    // 초기화
+    window.onload = initMap;
+  </script>
+
+</body>
+</html>

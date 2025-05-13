@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>제주도 여행지 상세</title>
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #map {
+      width: 75%;
+      height: 100vh;
+    }
+    aside {
+      width: 25%;
+      background-color: #f0f0f0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    aside h2 {
+      margin-top: 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 15px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+
+  <!-- ✅ 구글 지도 API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbMER9WUqCWwa5elJS2gL8cptzje82DQ0"></script>
+</head>
+<body>
+
+  <!-- ✅ 지도 영역 -->
+  <div id="map"></div>
+
+  <!-- ✅ 우측 사이드 -->
+  <aside>
+    <h2>추천 링크</h2>
+    <ul>
+      <li><a href="food1.html">🍽️ 음식점 추천</a></li>
+      <li><a href="hotel1.html">🏨 숙소 추천</a></li>
+      <li><a href="sight1.html">🌄 관광지 추천</a></li>
+    </ul>
+    <button onclick="goToAllMap()">전체 지도 보기</button>
+  </aside>
+
+  <script>
+    let map;
+
+    function initMap() {
+      // 제주도 좌표
+      const jeju = { lat: 33.4996, lng: 126.5312 };
+      
+      // 지도 생성
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: jeju,
+        zoom: 12
+      });
+
+      // 마커
+      new google.maps.Marker({
+        position: jeju,
+        map: map,
+        title: "제주도"
+      });
+    }
+
+    // 전체 지도 보기 페이지로 이동
+    function goToAllMap() {
+      window.location.href = 'allmap.html';
+    }
+
+    // 초기화
+    window.onload = initMap;
+  </script>
+
+</body>
+</html>

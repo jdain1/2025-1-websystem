@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>추천 여행지</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ddd;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 1.8em;
+    }
+    #map {
+      width: 100%;
+      height: 600px;
+    }
+  </style>
+
+  <!-- ✅ 구글 지도 API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbMER9WUqCWwa5elJS2gL8cptzje82DQ0"></script>
+</head>
+<body>
+
+  <!-- ✅ 상단 문구 -->
+  <header id="banner">추천 여행지 페이지</header>
+
+  <!-- ✅ 지도 영역 -->
+  <div id="map"></div>
+
+  <script>
+    // ✅ 추천 데이터
+    const recommendations = {
+      '관광+자차': {
+        place: '제주도',
+        lat: 33.4996,
+        lng: 126.5312,
+        destination: 'destination1.html'
+      },
+      '관광+뚜벅이': {
+        place: '인천',
+        lat: 37.4563,
+        lng: 126.7052,
+        destination: 'destination2.html'
+      },
+      '휴양+자차': {
+        place: '거제도',
+        lat: 34.8800,
+        lng: 128.6217,
+        destination: 'destination3.html'
+      },
+      '휴양+뚜벅이': {
+        place: '부산',
+        lat: 35.1796,
+        lng: 129.0756,
+        destination: 'destination4.html'
+      }
+    };
+
+    // ✅ URL 파라미터 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const userName = urlParams.get('name') || '고객';
+    const userChoice = urlParams.get('combi') || '관광+자차';
+
+    // ✅ 추천 정보 가져오기
+    const selected = recommendations[userChoice];
+
+    // ✅ 상단 문구 변경
+    document.getElementById('banner').innerText = `${userName}님의 추천여행지 [${selected.place}]`;
+
+    // ✅ 지도 초기화
+    function initMap() {
+      // 대한민국 중심 좌표
+      const centerKorea = { lat: 35.8714, lng: 127.695 };
+
+      // 지도 생성
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: centerKorea,
+        zoom: 7
+      });
+
+      // ✅ 추천지 마커 생성
+      const marker = new google.maps.Marker({
+        position: { lat: selected.lat, lng: selected.lng },
+        map: map,
+        title: selected.place
+      });
+
+      // ✅ 마커 클릭 시 이동
+      marker.addListener('click', () => {
+        window.location.href = selected.destination;
+      });
+    }
+
+    // ✅ 초기화
+    window.onload = initMap;
+  </script>
+
+</body>
+</html>
+
+
