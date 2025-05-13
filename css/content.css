@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body{
+    background-color:#e7e1dc;
+;
+}
+
 .first {
     position: relative;
     width: 100%;
@@ -12,62 +20,102 @@
     display: block;
 }
 
-.first > h1 {
+footer > h1{
+    font-family: Impact;
+    /* font-family: 'Playfair Display', serif; */
+    font-weight: 100;
+}
+
+.first > h1.dancing {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
-    font-size: 3em;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 120px;
+    letter-spacing: 3px;
+    color: rgb(212, 210, 204);
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    white-space: nowrap;              /* ✔ 한 줄 고정 */
 }
+
+.curved-h3 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 200px;
+    font-optical-sizing: auto;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
 .content1, .content2 {
     display: flex;
-    /* align-items: center; */
-    gap: 200px;
+    gap: 150px;
     margin: 20px;
-    margin-top: 80px;
+    margin-top: 200px;
 }
 
 .content1-img img, .content2-img img {
     width: 500px;
     height: 600px;
     margin-left: 50px;
-    border-radius: 10px;
+    border-radius: 500px;
 }
 
 .content1-text h2, .content2-text h2 {
-    margin-top: 80px;
-    font-size: 24px;
+    margin-top: 120px;
+    font-size: 30px;
 }
 
 .content1-text p, .content2-text p {
-    margin-top: 10px;
+    margin-top: 30px;
     font-size: 16px;
+    line-height: 2.5; 
 }
 
-footer{
+.button {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1.5px solid #08093b;
+    border-radius: 50px; 
+    color: #08093b;
+    font-family: "Lexend Tera", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #0b0e5a; 
+    color: #f8f4ef; 
+}
+footer {
     margin-left: -8px;
     margin-bottom: -10px;
+    margin-top: 180px;
     width: 1425px;
-    height: 300px;
-    background: #e6f0de;
+    height: 250px;
+    background: #0b0e5a;
 }
 
 footer h1 {
     display: flex;
     justify-content: center;
     gap: 250px;
+    font-size: 40px;
 }
 
-footer h1 a{
+footer h1 a {
     text-decoration: none;
-    color: black;
+    color: #e7e1dc;
 }
 
 footer h1 a:hover {
-    color: #ff6600;
-    
+    color: #ed722e;
 }
 
 footer span {
@@ -75,7 +123,11 @@ footer span {
     display: inline-block;
 }
 
-footer p{
-    margin-left: 500px;
-    margin-top: 150px;
+footer p {
+    margin-left: 480px;
+    margin-top: 100px;
+    color: #e7e1dc;
+    font-family: "Lexend Tera", sans-serif;
+    font-weight: 200;
+    font-size: 12px;
 }
