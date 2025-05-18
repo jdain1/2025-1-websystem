@@ -6,40 +6,62 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Lexend Tera", sans-serif;
     }
     header {
-      background-color: #ddd;
-      padding: 20px;
+      background-color: none;
+      padding: 10px;
       text-align: center;
       font-size: 1.8em;
     }
     #map {
       width: 100%;
-      height: 614px;
+      height: 473px;
+    }
+    header h3 {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    font-size: 30px;
+    }
+
+    header h3 a {
+        text-decoration: none;
+        color:rgb(130, 130, 140);
+    }
+
+    header h3 a:hover {
+        color: blue;
+    }
+
+    header span {
+        margin-top: 10px;
+        display: inline-block;
     }
   </style>
-
-  <!-- ✅ 구글 지도 API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbMER9WUqCWwa5elJS2gL8cptzje82DQ0"></script>
 </head>
 <body>
 
-  <header>전체 추천 여행지 보기</header>
+  <header>
+    <h4>전체 추천 여행지 보기</h4>
+    <h3>
+      <span><a href="destination1.html">jeju</a></span>
+      <span><a href="destination2.html">incheon</a></span>
+      <span><a href="destination3.html">geoge</a></span>
+      <span><a href="destination4.html">busan</a></span>
+    </h3> 
+  </header>
   <div id="map"></div>
 
   <script>
     function initMap() {
-      // 대한민국 중심 좌표
       const centerKorea = { lat: 35.8714, lng: 127.695 };
-
-      // 지도 생성
       const map = new google.maps.Map(document.getElementById("map"), {
         center: centerKorea,
-        zoom: 7
+        zoom: 6.75
       });
 
-      // 추천지 데이터
       const places = [
         {
           name: '제주도',
@@ -63,22 +85,18 @@
         }
       ];
 
-      // 마커 찍기
       places.forEach(place => {
         const marker = new google.maps.Marker({
           position: place.position,
           map: map,
           title: place.name
         });
-
-        // 마커 클릭 시 해당 destination 페이지로 이동
         marker.addListener('click', () => {
           window.location.href = place.url;
         });
       });
     }
 
-    // 초기화
     window.onload = initMap;
   </script>
 
