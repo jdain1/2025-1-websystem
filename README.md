@@ -27,7 +27,7 @@
 ### 다인 작업 현황
 | 작업 항목           | 완료 | 확인 |
 | ------------------ | :----------: | :----------: |
-| preference.html    | [ ]       | [ ]          |
+| preference.html    | [ O ]       | [ ]          |
 | content.html       | [ ]          | [ ]          |
 | readmore.html      | [ ]          | [ ]          |
 - [ ] preference.html
