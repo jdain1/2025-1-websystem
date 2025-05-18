@@ -27,9 +27,15 @@
 ### 다인 작업 현황
 | 작업 항목           | 완료 | 확인 |
 | ------------------ | :----------: | :----------: |
-| preference.html    | [X]          | [ ]          |
-| content.html       | [X]          | [ ]          |
+| preference.html    | O        | [ ]          |
+| content.html       | [ ]          | [ ]          |
 | readmore.html      | [ ]          | [ ]          |
+- [ ] preference.html
+- [ ] content.html 
+- [ ] readmore.html
+
+<br>
+
 
 ### 채원 작업 현황
 | 작업 항목           | 완료 | 확인 |
@@ -39,6 +45,12 @@
 | allmap.html        | [ ]          | [ ]          |
 | destination.html   | [ ]          | [ ]          |
 | review.html        | [ ]          | [ ]          |
+- [ ] name.html
+- [ ] recommend.html 
+- [ ] allmap.html
+- [ ] destination.html
+- [ ] review.html
+
 <br>
 
 ### 깃 참고
