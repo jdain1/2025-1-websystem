@@ -42,7 +42,7 @@
 | ------------------ | :----------: | :----------: |
 | name.html          | [0]          | [ ]          |
 | recommend.html     | [0]          | [ ]          |
-| allmap.html        | [ ]          | [ ]          |
+| allmap.html        | [0]          | [ ]          |
 | destination.html   | [ ]          | [ ]          |
 | review.html        | [ ]          | [ ]          |
 - [ ] name.html
