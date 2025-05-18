@@ -1,105 +1,109 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>추천 여행지</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
-      padding: 0;
     }
-    header {
-      background-color: none;
-      padding: 20px 0;
-      text-align: center;
-      font-size: 1.8em;
+    .fade {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
     }
-    #map {
-      width: 100%;
-      height: 614px;
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
   </style>
-
-  <!-- ✅ 구글 지도 API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbMER9WUqCWwa5elJS2gL8cptzje82DQ0"></script>
 </head>
 <body>
+  <div id="root"></div>
 
-  <!-- ✅ 상단 문구 -->
-  <header id="banner">추천 여행지</header>
+  <script type="text/babel">
+    function App() {
+      const [step, setStep] = React.useState("loading");
+      const [result, setResult] = React.useState(null);
 
-  <!-- ✅ 지도 영역 -->
-  <div id="map"></div>
+      const recommendations = {
+        '관광+자차': {
+          place: '제주도',
+          lat: 33.4996,
+          lng: 126.5312,
+          destination: 'jeju.html'
+        },
+        '관광+뚜벅이': {
+          place: '인천',
+          lat: 37.4563,
+          lng: 126.7052,
+          destination: 'incheon.html'
+        },
+        '휴양+자차': {
+          place: '거제도',
+          lat: 34.8800,
+          lng: 128.6217,
+          destination: 'geoge.html'
+        },
+        '휴양+뚜벅이': {
+          place: '부산',
+          lat: 35.1796,
+          lng: 129.0756,
+          destination: 'busan.html'
+        }
+      };
 
-  <script>
-    // ✅ 추천 데이터
-    const recommendations = {
-      '관광+자차': {
-        place: '제주도',
-        lat: 33.4996,
-        lng: 126.5312,
-        destination: 'destination1.html'
-      },
-      '관광+뚜벅이': {
-        place: '인천',
-        lat: 37.4563,
-        lng: 126.7052,
-        destination: 'destination2.html'
-      },
-      '휴양+자차': {
-        place: '거제도',
-        lat: 34.8800,
-        lng: 128.6217,
-        destination: 'destination3.html'
-      },
-      '휴양+뚜벅이': {
-        place: '부산',
-        lat: 35.1796,
-        lng: 129.0756,
-        destination: 'destination4.html'
+      React.useEffect(() => {
+        const pref1 = localStorage.getItem('pref1');
+        const pref2 = localStorage.getItem('pref2');
+        const key = `${pref1}+${pref2}`;
+        const selected = recommendations[key];
+
+        if (!selected) {
+          setResult({ place: "추천 없음", destination: "name.html" });
+        } else {
+          setResult(selected);
+        }
+
+        setTimeout(() => setStep("text1"), 2000);
+        setTimeout(() => setStep("text2"), 3000);
+        setTimeout(() => {
+          window.location.href = selected?.destination || "name.html";
+        }, 4000);
+      }, []);
+
+      if (step === "loading") {
+        return <h2 className="fade">취향분석중...</h2>;
       }
-    };
 
-    // ✅ URL 파라미터 가져오기
-    const urlParams = new URLSearchParams(window.location.search);
-    const userName = urlParams.get('name') || '고객';
-    const userChoice = urlParams.get('combi') || '관광+자차';
+      if (step === "text1") {
+        return <h2 className="fade">당신의 추천 여행지는?</h2>;
+      }
 
-    // ✅ 추천 정보 가져오기
-    const selected = recommendations[userChoice];
+      if (step === "text2") {
+        return (
+          <h1 className="fade" style={{ color: "#f97316" }}>
+            {result?.place}
+          </h1>
+        );
+      }
 
-    // ✅ 상단 문구 변경
-    document.getElementById('banner').innerText = `${userName}님의 추천여행지 [${selected.place}]`;
-
-    // ✅ 지도 초기화
-    function initMap() {
-      // 대한민국 중심 좌표
-      const centerKorea = { lat: 35.8714, lng: 127.695 };
-
-      // 지도 생성
-      const map = new google.maps.Map(document.getElementById("map"), {
-        center: centerKorea,
-        zoom: 7
-      });
-
-      // ✅ 추천지 마커 생성
-      const marker = new google.maps.Marker({
-        position: { lat: selected.lat, lng: selected.lng },
-        map: map,
-        title: selected.place
-      });
-
-      // ✅ 마커 클릭 시 이동
-      marker.addListener('click', () => {
-        window.location.href = selected.destination;
-      });
+      return null;
     }
 
-    // ✅ 초기화
-    window.onload = initMap;
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
   </script>
-
 </body>
 </html>
 
