@@ -41,7 +41,7 @@
 | 작업 항목           | 완료 | 확인 |
 | ------------------ | :----------: | :----------: |
 | name.html          | [0]          | [ ]          |
-| recommend.html     | [ ]          | [ ]          |
+| recommend.html     | [0]          | [ ]          |
 | allmap.html        | [ ]          | [ ]          |
 | destination.html   | [ ]          | [ ]          |
 | review.html        | [ ]          | [ ]          |
