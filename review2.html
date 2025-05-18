@@ -70,7 +70,6 @@
     <script>
         let reviews = [];
 
-        // 별점 선택 처리
         $('.star').click(function () {
             let rating = $(this).data('value');
             $('#rating').val(rating);
@@ -78,7 +77,7 @@
             $(this).addClass('on').prevAll().addClass('on');
         });
 
-        // 페이지 로드시 저장된 데이터 불러오기
+
         window.onload = function () {
             const stored = localStorage.getItem("reviews");
             if (stored) {
@@ -104,7 +103,6 @@
             renderReview(rating, comment);
             updateAverage();
 
-            // 입력 초기화
             subject.value = "";
             document.querySelector("#rating").value = 1;
             $(".star").removeClass("on");
