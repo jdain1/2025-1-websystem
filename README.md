@@ -27,7 +27,7 @@
 ### 다인 작업 현황
 | 작업 항목           | 완료 | 확인 |
 | ------------------ | :----------: | :----------: |
-| preference.html    | O        | [ ]          |
+| preference.html    | [ ]       | [ ]          |
 | content.html       | [ ]          | [ ]          |
 | readmore.html      | [ ]          | [ ]          |
 - [ ] preference.html
@@ -53,7 +53,7 @@
 
 <br>
 
-### 깃 참고
+## 깃 참고
 ```
 git clone {링크} .           --- 초기에만
 git add .                    --- 전체 파일 add
