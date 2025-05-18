@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙소</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - restaurant -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Geoje Island</h1>
+        <img src="../image/geojemain.jpg" alt="거제도이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/비커밍풀빌라.jpg" alt="비커밍풀빌라 펜션 ">
+        </div>
+        <div class="content1-text">
+            <h2>비커밍풀빌라 펜션</h2>
+            <p>
+                거제도의 바닷가에 위치한 펜션이다. <br>
+                수영장과 바비큐장이 있어 휴양을 즐기러온 관광객들에게 안성맞춤인 숙소이다.<br>
+            </p>
+            <a href="http://becoming.or.kr/" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/바람의언덕리조트.jpg" alt="바람의언덕리조트">
+        </div>
+        <div class="content2-text">
+            <h2>바람의 언덕 리조트</h2>
+            <p>
+                숙소안의 통창을 통해 남해 바다의 풍경을 볼 수 있다. <br>
+                테라스에서는 푸른 남해바다를 볼 수 있어 힐링하기에 좋은 리조트이다. <br>
+            </p>
+             <a href="http://xn--bn1by3foxedsmo4b.com/" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="geojefood.html">restaurant</a></span>
+            <span><a href="geojehotel.html">hotel</a></span>
+            <span><a href="geojesight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

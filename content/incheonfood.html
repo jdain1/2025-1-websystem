@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식점</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - restaurant -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Incheon</h1>
+        <img src="../image/incheonmain.jpg" alt="인천이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/연경.jpg" alt="연경">
+        </div>
+        <div class="content1-text">
+            <h2>연경</h2>
+            <p>
+                [대표메뉴] 하얀짜장, 멘보샤<br>
+                2023년, 2024년 블루리본서베이에 수록되었다. <br>
+                연국내에서 처음으로 하얀짜장을 개발해 냈으며, <br>
+                차이나타운에 본점을 두고 국내에 중국의 음식과 문화를 서비스하고 있습니다.<br>
+            </p>
+            <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/청춘조개.jpeg" alt="청춘조개">
+        </div>
+        <div class="content2-text">
+            <h2>청춘조개</h2>
+            <p>
+                [대표메뉴] 명품조개구이, 가리비타워<br>
+                바다가 보이는 전망좋은곳에 위치하고 있다.<br>
+                조개뿐만아니라 다양한 셀프바를 무제한으로 제공하며 <br>
+                남녀노소, 가족, 모임, 특히 아이와 함께 바닷가 캠핑을 놀러온 것처럼 즐길 수 있다.<br>
+                무한 리필뿐만 아닌 일품요리가 준비되어 있다.<br>
+            </p>
+             <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="incheonfood.html">restaurant</a></span>
+            <span><a href="incheonhotel.html">hotel</a></span>
+            <span><a href="incheonsight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -3,7 +3,6 @@
 
 body{
     background-color:#e7e1dc;
-;
 }
 
 .first {
@@ -36,6 +35,19 @@ footer > h1{
     font-size: 120px;
     letter-spacing: 3px;
     color: rgb(212, 210, 204);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    white-space: nowrap;              /* ✔ 한 줄 고정 */
+}
+
+.curved-h3 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 200px;
+    font-optical-sizing: auto;
+    color: rgb(232, 230, 222);
     text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
     white-space: nowrap;              /* ✔ 한 줄 고정 */
 }

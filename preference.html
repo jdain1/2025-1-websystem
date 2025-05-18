@@ -2,7 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>취향 선택 1</title>
+  <title>취향 선택</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     html, body {
@@ -10,36 +11,46 @@
       padding: 0;
       height: 100%;
       overflow: hidden;
-      font-family: sans-serif;
+      font-family: 'Playfair Display', serif;
     }
+
     .container {
       width: 100%;
       height: 100vh;
-      overflow: hidden; /* ✅ 드래그 스크롤 완전 차단 */
+      overflow: hidden;
     }
+
     .slider {
       width: 100%;
-      height: 200vh; /* ✅ 두 화면 높이 */
+      height: 200vh;
       transition: transform 1s ease-in-out;
     }
+
     .screen {
       width: 100%;
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
+      padding-left: 12.5%;
+      padding-top: 3vh; /* ✅ 위치 정확히 통일 */
     }
 
     h1 {
-      font-size: 32px;
+      color: #ff5031;
+      font-size: 90px;
       margin: 0;
+      line-height: 1.2;
+      text-align: left;
+      white-space: pre-line;
+      animation: fadeInUp 0.8s ease-out;
     }
 
     .button-wrapper {
       display: flex;
       gap: 80px;
-      margin-top: 80px; /* ✅ h1 아래로 80px 이동 */
+      margin-top: 80px;
     }
 
     button.select-btn {
@@ -51,8 +62,24 @@
       overflow: hidden;
       transition: transform 0.1s ease;
     }
+
     button.select-btn:active {
       transform: scale(0.95);
+    }
+
+    button.select-btn video {
+      transition: transform 0.3s ease;
+      will-change: transform;
+      backface-visibility: hidden;
+      transform-origin: center center;
+    }
+
+    button.select-btn:hover video {
+      transform: translate(-50%, -50%) scale(1.15);
+    }
+
+    button.select-btn:hover span {
+      font-size: 26px;
     }
 
     video {
@@ -77,32 +104,121 @@
     }
 
     #resultBtn {
-      visibility: hidden; /* ✅ display:none → visibility로 변경 */
-      margin-top: 30px;
+      position: absolute;
+      top: 92%;
+      left: 82%;
+      transform: translate(-50%, -50%);
       padding: 15px 30px;
       font-size: 18px;
       cursor: pointer;
       border: none;
-      background-color: #4CAF50;
+      background-color: #ff5031;
       color: white;
+      font-family: Playfair Display;
+      font-weight: 400;
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
       width: 200px;
       height: 60px;
-  }
-  #resultBtn:active {
-    transform: scale(0.95);
-  }
+      visibility: hidden;
+      opacity: 0;
+      z-index: 2;
+    }
 
+    #resultBtn:hover{
+      background-color: white;
+      color: #ff5031;
+    }
+
+    @keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#resultBtn.show {
+  visibility: visible;      /* ✅ 이거 없으면 절대 안 보임 */
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+
+
+    .scroll-lines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .vertical-line {
+      position: absolute;
+      top: 0;
+      left: 75%;
+      width: 2px;
+      height: 100%;
+      background-color: #ff5031;
+      transform-origin: top;
+      animation: slideDown 0.6s ease-out;
+    }
+
+    .horizontal-line {
+      position: absolute;
+      top: 60%;
+      height: 2px;
+      background-color: #ff5031;
+      width: 0;
+      opacity: 0;
+      transition: width 0.8s ease, opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .draw-line {
+      left: 0;
+      transform-origin: left;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: scaleY(0);
+      }
+      to {
+        transform: scaleY(1);
+      }
+    }
   </style>
 </head>
 <body>
+
+  <div class="scroll-lines">
+    <div class="vertical-line"></div>
+    <div class="horizontal-line draw-line"></div>
+  </div>
+
   <div class="container">
     <div class="slider" id="slider">
-      <!-- 첫 화면 -->
+      <!-- 첫 번째 화면 -->
       <div class="screen">
-        <h1 id="header"></h1>
+        <h1>Choose Your<br>Taste</h1>
         <div class="button-wrapper">
           <button class="select-btn" onclick="firstSelect('관광')">
             <video autoplay loop muted playsinline>
@@ -121,7 +237,7 @@
 
       <!-- 두 번째 화면 -->
       <div class="screen">
-        <h1 id="header2"></h1>
+        <h1>Choose Your<br>Taste</h1>
         <div class="button-wrapper">
           <button class="select-btn" onclick="secondSelect('뚜벅이')">
             <video autoplay loop muted playsinline>
@@ -136,25 +252,30 @@
             <span>자차</span>
           </button>
         </div>
-        <button id="resultBtn" onclick="goResult()">결과보기</button>
+        <button id="resultBtn" onclick="goResult()">Next...</button>
       </div>
     </div>
   </div>
 
   <script>
-    const name = localStorage.getItem('name') || '사용자';
-    document.getElementById('header').innerText = `${name}님의 취향은?`;
-    document.getElementById('header2').innerText = `${name}님의 취향은?`;
-
     function firstSelect(pref) {
       localStorage.setItem('pref1', pref);
       document.getElementById('slider').style.transform = 'translateY(-100vh)';
+
+      // 가로선 등장 효과
+      setTimeout(() => {
+        const line = document.querySelector('.draw-line');
+        line.style.width = '100%';
+        line.style.opacity = '1';
+      }, 400);
     }
 
     function secondSelect(pref) {
       localStorage.setItem('pref2', pref);
-      document.getElementById('resultBtn').style.visibility = 'visible';  // ✅ 변경
+      const resultBtn = document.getElementById('resultBtn');
+      resultBtn.classList.add('show');
     }
+
 
     function goResult() {
       window.location.href = 'index.html';

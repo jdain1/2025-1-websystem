@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식점</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - hotel -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Incheon</h1>
+        <img src="../image/incheonmain.jpg" alt="인천이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/그랜드하얏트.jpeg" alt="그랜드하얏트">
+        </div>
+        <div class="content1-text">
+            <h2>그랜드 하얏트 인천 웨스트 타워 </h2>
+            <p>
+                인천국제공항에서 3분 거리에 위치해 있다. <br>
+                송도 국제도시, 인천경제자유구역 등의 비즈니스 지역은 물론, <br>
+                서울, 인천 시내와 편리한 접근성을 가지고 있어 <br>
+                여행객들은 물론 비즈니스 미팅 및 행사를 위한 최적의 장소를 제공하는 인천의 특1급 호텔이다.<br>
+            </p>
+            <a href="https://www.hyatt.com/grand-hyatt/ko-KR/inche-grand-hyatt-incheon" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/제이앤파크호텔.jpeg" alt="제이앤파크호텔">
+        </div>
+        <div class="content2-text">
+            <h2>제이앤파크호텔</h2>
+            <p>
+                을왕리 해변의 푸른 바다를 배경으로 했다.<br>
+                사랑하는 사람들과 휴식을 즐기면서 잊지 못할 추억을 만들 수 있도록 특별히 만들어진 장소이다.<br>
+                선녀바위 해수욕장 정류장 도보 3분거리에 위치하고 있다.<br>
+            </p>
+             <a href="http://www.jnparkhotel.co.kr/" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="incheonfood.html">restaurant</a></span>
+            <span><a href="incheonhotel.html">hotel</a></span>
+            <span><a href="incheonsight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

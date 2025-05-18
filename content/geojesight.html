@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관광지</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - sightseeing -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Geoje Island</h1>
+        <img src="../image/geojemain.jpg" alt="거제도이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/거제케이블카.jpg" alt="거제 케이블카">
+        </div>
+        <div class="content1-text">
+            <h2>거제 케이블카</h2>
+            <p>
+                거제의 자연 산과 노을, 숲과 바다, 경계 없는 자연 속으로 끝없이 펼쳐지는<br> 
+                천혜의 절경을 감상할 수 있는 거제 케이블카.<br> 
+                거제 파노라마 케이블카는 학동고개에서 노자산 정상을 연결하는 1.56km 구간의 케이블카이다. <br> 
+                상부전망대에서는 노자산과 다도해 전경을 경계 없이 360도로 접할 수 있으며, <br> 
+                총 45대의 캐빈 중 10대의 크리스탈 캐빈은 바닥이 유리로 되어있어 탑승하면 노자산 숲길을 걷는 듯한 느낌을 받을 수 있다.<br> 
+            </p>
+            <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/외도.jpg" alt="외도">
+        </div>
+        <div class="content2-text">
+            <h2>외도</h2>
+            <p>
+                섬 동쪽 끝에 경상남도 문화유산으로 지정된<br> 
+                공룡굴·공룡바위·공룡발자국이 있고 섬 주위에 바다낚시터가 많다. <br>
+                숙식은 할 수 없으며 오전 8시부터 오후 5시까지(여름철은 6시) 문을 연다. <br>
+                찾아가려면 장승포동이나 일운면 구조라, 동부면 학동리, 남부면 갈곶리,<br> 
+                일운면 와현리 등지의 선착장에서 해상관광유람선을 탄다. <br>
+            </p>
+             <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="geojefood.html">restaurant</a></span>
+            <span><a href="geojehotel.html">hotel</a></span>
+            <span><a href="geojesight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

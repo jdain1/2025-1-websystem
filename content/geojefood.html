@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식점</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - restaurant -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Geoje Island</h1>
+        <img src="../image/geojemain.jpg" alt="거제도이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/어방가.jpg" alt="어방가">
+        </div>
+        <div class="content1-text">
+            <h2>어방가</h2>
+            <p>
+                [대표메뉴] 전복장정식,찐스페셜물회,갑오징어 튀김<br>
+                신선한 해산물이 한접시에 가득 담긴다. <br>
+                다양한 종류의 회를 맛보고 싶다면 찐스페셜물회를 추천한다. <br>
+                살얼음이 낀 육수에 쫄깃한 회를 함께 먹는다면 무더위를 싹 내릴 수 있을 것이다.<br>
+            </p>
+            <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/육서방국밥.jpg" alt="육서방국밥">
+        </div>
+        <div class="content2-text">
+            <h2>육서방국밥</h2>
+            <p>
+                [대표메뉴] 돼지국밥, 순대국밥, 왕갈비탕 <br>
+                진한 국물이 상징인 곳이다. <br>
+                특히 왕갈비탕에는 큼직한 갈비가 들어있어 배를 든든하게 채우기에 좋다.<br>
+                또한 위치가 거제도인만큼 전복 하나가 통째로 들어가 육지와 바다의 내음을 모두 느낄 수 있다.<br>
+            </p>
+             <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="geojefood.html">restaurant</a></span>
+            <span><a href="geojehotel.html">hotel</a></span>
+            <span><a href="geojesight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

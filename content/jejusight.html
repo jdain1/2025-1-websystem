@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관광지</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - sightseeing -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Jeju Island</h1>
+        <img src="../image/jejumain.jpeg" alt="제주도이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/오설록티뮤지엄.jpg" alt="오설록 티 뮤지엄">
+        </div>
+        <div class="content1-text">
+            <h2>오설록 티 뮤지엄</h2>
+            <p>
+                한국 최초의 차(茶) 전문박물관으로 정식 명칭은 오'설록 티 뮤지엄(o'sulloc tea museum)이다. <br>
+                주도에서 나는 먹돌로 녹찻잔 형상의 건물외관을 마감하였다. <br>
+                야외에서는 24만평 규모의 차 재배지를 관람할 수 있다. <br>
+                전망대에서는 한라산과 광활한 다원(茶園) 풍경이 내려다보이며, <br>
+                박물관 주변 정원에는 연못과 산책로가 조성되어 있다. <br>
+            </p>
+            <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/우도.jpg" alt="우도">
+        </div>
+        <div class="content2-text">
+            <h2>우도</h2>
+            <p>
+                제주도 동쪽에 위치한 섬이다. <br>
+                남해, 동해와는 다르게 청량하고 이국적인 풍경으로 마치 동남아에 온 듯한 기분을 들게하는 섬이다. <br>
+                부두에서 20분정도 배를 타고 갈 수 있다. <br>
+                자연경관이 잘 보존되어 푸른바다를 볼 수 있다. <br>
+                둘레길을 따라 걸을 수도 있고 자전거나 삼륜차를 빌려 우도를 한바퀴 둘러볼 수도 있다. <br>
+            </p>
+             <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="jejufood.html">restaurant</a></span>
+            <span><a href="jejuhotel.html">hotel</a></span>
+            <span><a href="jejusight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

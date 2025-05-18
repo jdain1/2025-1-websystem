@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식점</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - sightseeing -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Incheon</h1>
+        <img src="../image/incheonmain.jpg" alt="인천이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/송도센트럴파크.jpg" alt="송도센트럴파크">
+        </div>
+        <div class="content1-text">
+            <h2>송도 센트럴파크</h2>
+            <p>
+                국내 최초로 바닷물을 이용한 해수공원이자 한국의 지형적 특성을 살린 도시공원으로<br>
+                인공 수로에는 수상 택시, 카누 등 수상 레저 시설이 갖춰져 있고<br>
+                공원 곳곳에서 다양한 문화와 예술을 만끽할 수 있는 송도의 랜드마크이자 휴식 공간이다.<br>
+            </p>
+            <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/포레스트아웃팅스.jpg" alt="포레스트 아웃팅스">
+        </div>
+        <div class="content2-text">
+            <h2>포레스트 아웃팅스</h2>
+            <p>
+                높은 층고와 개방형 천장으로 탁 트인 공간이 특징이며, <br>
+                푸릇푸릇한 식물들로 조성된 플랜테리어 컨셉의 대형 카페이다.<br>
+                차별화된 퀄리티의 커피, 베이커리, 키친 메뉴 구성이 특징이다.<br>
+            </p>
+             <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="incheonfood.html">restaurant</a></span>
+            <span><a href="incheonhotel.html">hotel</a></span>
+            <span><a href="incheonsight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

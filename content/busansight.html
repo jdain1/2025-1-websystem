@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식점</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - sightseeing -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Busan</h1>
+        <img src="../image/busanmain.jpg" alt="부산이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/광안리.jpg" alt="광안리">
+        </div>
+        <div class="content1-text">
+            <h2>광안리해수욕장</h2>
+            <p>
+                부산의 대표적인 도심 속의 해양공원.<br>
+                광안리 해수욕장의 이름은 조선시대의 동래군 남촌면 광안리란 지명을 그대로 따서 부르고 있다.<br>
+                해수욕장에 야외상설무대를 설치하여 각종 공연이 상시 열리고 있으며, <br>
+                가까운 곳에서 바나나보트, 윈드서핑 등 다양한 해양스포츠도 즐길 수 있다.<br>
+            </p>
+            <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/해운대.jpg" alt="해운대">
+        </div>
+        <div class="content2-text">
+            <h2>해운대해수욕장</h2>
+            <p>
+                숙박·오락시설이 잘 정비된 국내 1급의 해수욕장으로, <br>
+                국내 유수의 온천장까지 끼고 있어 해마다  여름철에는 50~60만의 인파로 붐비는 곳이다.<br>
+                해운대의 야경은 2016년 기준으로 세계의 아름다운 도시 순위 5위에 꼽혔다.<br>
+            </p>
+             <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="busanfood.html">restaurant</a></span>
+            <span><a href="busanhotel.html">hotel</a></span>
+            <span><a href="busansight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>

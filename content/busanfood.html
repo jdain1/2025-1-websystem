@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>음식점</title>
+    <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
+    <link href="../css/content.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #333333b6;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <svg viewBox="0 0 500 200" class="curved-h3">
+            <defs>
+                <path id="curve" d="M 50 150 Q 250 50 450 150" />
+            </defs>
+            <text font-family="Lexend Tera, sans-serif"
+                font-size="24"
+                fill="rgb(232, 230, 222)">
+                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
+                    - restaurant -
+                </textPath>
+            </text>
+        </svg>
+        <h1 class="dancing">Busan</h1>
+        <img src="../image/busanmain.jpg" alt="부산이미지">
+    </div>
+    <div class="content1">
+        <div class="content1-img">
+            <img src="../image/가야밀면.jpeg" alt="가야밀면">
+        </div>
+        <div class="content1-text">
+            <h2>해운대 가야밀면</h2>
+            <p>
+                [대표메뉴] 밀면, 비빔면<br>
+                23년째 성업중이며 해수욕장 근처에 있어 전국에서 여행객 및 연예인이 많이 찾는 밀면 전문점이다.<br>
+                2024 블루리본서베이에 수록되었다.<br>
+                2007년부터 지금까지 국내외 200여곳에 기술 전수 창업을 하고 있다.<br>
+            </p>
+            <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="content2-img">
+            <img src="../image/광안리유가횟집.jpeg" alt="광안리유가횟집">
+        </div>
+        <div class="content2-text">
+            <h2>광안리 유가횟집</h2>
+            <p>
+                [대표메뉴] 고급어종, 돌돔, 특고급어종 및 스끼다시<br>
+                20여 가지의 스끼다시와 함께 정성껏 준비한 다양한 회 코스를 즐길 수 있다.<br>
+                일반적인 광어, 우럭뿐만 아니라 자연산 활어회, 제철 생선, 고급 어종까지 다채롭게 제공되어<br>
+                미식가들의 입맛을 만족시킨다.<br>
+                다수의 방송 프로그램에도 소개된 바 있는 검증된 맛집이다.<br>
+            </p>
+             <a href="#" class="button">Read More</a>
+        </div>
+    </div>
+    <button id="scrollTopBtn">&#8679;</button>
+    <script>
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+    <footer>
+        <h1>
+            <span><a href="busanfood.html">restaurant</a></span>
+            <span><a href="busanhotel.html">hotel</a></span>
+            <span><a href="busansight.html">sightseeing</a></span>
+        </h1>
+        <p>Copyright 2025. group 1 of software All rights reserved.</p>
+    </footer>
+</body>
+</html>
