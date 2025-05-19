@@ -40,9 +40,9 @@
 ### 채원 작업 현황
 | 작업 항목           | 완료 | 확인 |
 | ------------------ | :----------: | :----------: |
-| name.html          | [0]          | [ ]          |
-| recommend.html     | [0]          | [ ]          |
-| allmap.html        | [0]          | [ ]          |
+| name.html          | [ ]          | [ ]          |
+| recommend.html     | [ ]          | [ ]          |
+| allmap.html        | [ ]          | [ ]          |
 | destination.html   | [ ]          | [ ]          |
 | review.html        | [ ]          | [ ]          |
 - [ ] name.html
