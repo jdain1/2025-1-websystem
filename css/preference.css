@@ -108,7 +108,7 @@ button span {
     font-size: 18px;
     cursor: pointer;
     border: none;
-    background-color: #007bff;
+    background-color: #0b0e5a;
     color: white;
     font-family: Playfair Display;
     font-weight: 400;
@@ -124,8 +124,8 @@ button span {
 
 #resultBtn:hover {
     background-color: rgba(255, 255, 255, 0.1);
-    color: #007bff;
-    border: 2px solid #76b8ff71;
+    color: #0b0e5a;
+    border: 2px solid #0b0e5a;
     backdrop-filter: blur(6px);
     box-shadow: 0 8px 20px #aad3ff28;
 }
@@ -200,7 +200,7 @@ button span {
 .ripple {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, #f8fbff, #dfefff, #a2cfff);
+    background: radial-gradient(circle, #f8fbff, #b2b3ca);
     transform: scale(0);
     animation: rippleExpand 1s ease-out forwards;
     pointer-events: none;
@@ -222,7 +222,7 @@ button span {
     position: fixed;
     width: 20px;
     height: 20px;
-    background: #007bff;
+    background: #0b0e5a;
     transform: rotate(-45deg) translate(-50%, -50%);
     z-index: 9998;
     pointer-events: none;
@@ -234,7 +234,7 @@ button span {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: #007bff;
+    background: #0b0e5a;
     border-radius: 50%;
 }
 
