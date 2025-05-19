@@ -7,46 +7,21 @@
     <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
     <link href="../css/content.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #333333b6;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            font-size: 30px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            z-index: 999;
-        }
-
-        #scrollTopBtn:hover {
-            background-color: #555;
-        }
-    </style>
 </head>
 <body>
     <div class="first">
-        <svg viewBox="0 0 500 200" class="curved-h3">
-            <defs>
+        <img src="../image/jejumain.jpeg" alt="제주도 이미지" />
+            <div class="center-wrapper">
+                <svg viewBox="0 0 500 200" class="curved-h3">
+                <defs>
                 <path id="curve" d="M 50 150 Q 250 50 450 150" />
-            </defs>
-            <text font-family="Lexend Tera, sans-serif"
-                font-size="24"
-                fill="rgb(232, 230, 222)">
-                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
-                    - hotel -
-                </textPath>
-            </text>
-        </svg>
-        <h1 class="dancing">Jeju Island</h1>
-        <img src="../image/jejumain.jpeg" alt="제주도이미지">
+                </defs>
+                    <text font-family="Lexend Tera, sans-serif" font-size="24" fill="rgb(232, 230, 222)">
+                    <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">- hotel -</textPath>
+                    </text>
+                </svg>
+            <h1 class="dancing">Jeju Island</h1>
+        </div>
     </div>
     <div class="content1">
         <div class="content1-img">
@@ -70,22 +45,14 @@
             <h2>한화 리조트 제주</h2>
             <p>
                 한라산 초입에 위치한 리조트이다. <br>
-                제주의 중심에 위치하기 때문에 차를 타고 갈 수 있다는 불편함이 있지만, 그만큼 아름다운 경치를 자랑하는 곳이다. <br>
+                제주의 중심에 위치하기 때문에 차를 타고 갈 수 있다는 불편함이 있지만, <br>
+                그만큼 아름다운 경치를 자랑하는 곳이다. <br>
                 한라산 근처이기 때문에 신선한 공기를 느낄 수 있으며 다양한 야생동물이 공존하는 곳이다. <br>
             </p>
              <a href="https://www.hanwhaleisure.co.kr/?folder=resort&page=introduce&c1=1000000&c2=1012000" class="button">Read More</a>
         </div>
     </div>
     <button id="scrollTopBtn">&#8679;</button>
-    <script>
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
     <footer>
         <h1>
             <span><a href="jejufood.html">restaurant</a></span>
@@ -94,5 +61,6 @@
         </h1>
         <p>Copyright 2025. group 1 of software All rights reserved.</p>
     </footer>
+  <script src="../js/content.js"></script>
 </body>
 </html>

@@ -7,47 +7,22 @@
     <link rel="icon" type="../image/x-icon" href="./icon/food.ico" />  <!-- 사이트 아이콘 변경 -->
     <link href="../css/content.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #333333b6;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            font-size: 30px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            z-index: 999;
-        }
-
-        #scrollTopBtn:hover {
-            background-color: #555;
-        }
-    </style>
 </head>
 <body>
     <div class="first">
-        <svg viewBox="0 0 500 200" class="curved-h3">
-            <defs>
-                <path id="curve" d="M 50 150 Q 250 50 450 150" />
-            </defs>
-            <text font-family="Lexend Tera, sans-serif"
-                font-size="24"
-                fill="rgb(232, 230, 222)">
-                <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">
-                    - sightseeing -
-                </textPath>
-            </text>
-        </svg>
-        <h1 class="dancing">Incheon</h1>
-        <img src="../image/incheonmain.jpg" alt="인천이미지">
+    <img src="../image/incheonmain.jpg" alt="인천 이미지" />
+    <div class="center-wrapper">
+      <svg viewBox="0 0 500 200" class="curved-h3">
+        <defs>
+          <path id="curve" d="M 50 150 Q 250 50 450 150" />
+        </defs>
+        <text font-family="Lexend Tera, sans-serif" font-size="24" fill="rgb(232, 230, 222)">
+          <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle">- sightseeing -</textPath>
+        </text>
+      </svg>
+      <h1 class="dancing">Incheon</h1>
     </div>
+  </div>
     <div class="content1">
         <div class="content1-img">
             <img src="../image/송도센트럴파크.jpg" alt="송도센트럴파크">
@@ -77,15 +52,6 @@
         </div>
     </div>
     <button id="scrollTopBtn">&#8679;</button>
-    <script>
-        const scrollTopBtn = document.getElementById('scrollTopBtn');
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
     <footer>
         <h1>
             <span><a href="incheonfood.html">restaurant</a></span>
@@ -94,5 +60,6 @@
         </h1>
         <p>Copyright 2025. group 1 of software All rights reserved.</p>
     </footer>
+  <script src="../js/content.js"></script>
 </body>
 </html>
