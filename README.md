@@ -16,7 +16,7 @@
 ### 작업일정
 ```
 ~ 5/13(화) 각자 파트 html 완성
-~ 5/20(화) css 완성
+~ 5/22(목) css 완성
 ~ 5/27(화) js 및 전체적인 코드 완성
 ~ 6/16(월) 기말고사(휴식)
 ~ 6/19(목) 오류 점검 및 최종 제출
@@ -26,13 +26,15 @@
 ## ✅ 체크리스트
 ### 다인 작업 현황
 | 작업 항목           | 완료 | 확인 |
-| ------------------ | :----------: | :----------: |
-| preference.html    | [ O ]        | [ ]          |
-| content.html       | [ O ]        | [ ]          |
-| readmore.html      | [ ]          | [ ]          |
+| ------------------  | :----------: | :----------: |
+| preference.html     | [ O ]        | [ ]          |
+| content.html        | [ O ]        | [ ]          |
+| readmore.html(food) | [ ]          | [ ]          |
+| readmore.html(sight)| [ ]          | [ ]          |
 - [ ] preference.html
 - [ ] content.html 
-- [ ] readmore.html
+- [ ] readmore.html(food)
+- [ ] readmore.html(sight)
 
 <br>
 
