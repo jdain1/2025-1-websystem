@@ -42,7 +42,8 @@
 ### 채원 작업 현황
 | 작업 항목           | 완료 | 확인 |
 | ------------------ | :----------: | :----------: |
-| name.html          | [ ]          | [ ]          |
+| login.html         | [ ]          | [ ]          |
+| makeid.html        | [ ]          | [ ]          |
 | recommend.html     | [ ]          | [ ]          |
 | allmap.html        | [ ]          | [ ]          |
 | destination.html   | [ ]          | [ ]          |
