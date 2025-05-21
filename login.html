@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>login_page</title>
+  <link rel="stylesheet" href="home.css" />
+  <script>
+    function getUsers() {
+      const users = document.cookie.split(';').find(c => c.trim().startsWith('users='));
+      return users ? JSON.parse(decodeURIComponent(users.split('=')[1])) : {};
+    }
+
+    function login() {
+      const username = document.getElementById("loginUsername").value;
+      const pw = document.getElementById("loginPassword").value;
+      const users = getUsers();
+
+      if (users[username] && users[username] === pw) {
+        document.cookie = `currentUser=${username}`;
+        window.location.href = "preference.html"; // ← 수정된 부분
+      } else {
+        alert("존재하지 않습니다");
+      }
+    }
+
+    function handleGuestClick() {
+      if (confirm("회원가입을 하시겠습니까?")) {
+        window.location.href = "makeid.html";
+      } else {
+        if (confirm("회원가입을 하지 않을 시 페이지 사용이 어렵습니다.\n계속하시겠습니까?")) {
+          alert("로그인 페이지에 머무릅니다.");
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <main>
+    <h1><em>Find Your Perfect Trip!</em></h1>
+    <p>당신에게 꼭 맞는 여행지를 추천해 드립니다.<br>이름을 입력하고 시작해 보세요!</p>
+    <form onsubmit="event.preventDefault(); login();">
+      <input type="text" id="loginUsername" placeholder="Enter your username" />
+      <input type="text" id="loginPassword" placeholder="Enter your pw" />
+      <div>
+        <button type="submit">로그인</button>
+      </div>
+    </form>
+    <div class="noid">
+      <a onclick="handleGuestClick()">비회원이신가요?</a>
+    </div>
+  </main>
+</body>
+</html>
+
