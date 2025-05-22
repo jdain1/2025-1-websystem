@@ -4,55 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>도토리 키친</title>
+    <link rel="stylesheet" href="../../css/menu.css"/>
     <link rel="stylesheet" href="../../css/readmore-menu.css"/>
+
+    <style>
+      .tab{
+        margin-left: 0;
+        padding: 50px;
+        background: #331515;
+      }
+
+      .tab-box{
+        background: #ffa3a3;
+      }
+
+      .tab h1{
+        width: 200px;
+        text-align: center;
+        margin-left: 43%;
+        font-size: 60px;
+        background: #000;
+      }
+
+      .tabLinks{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        color: #45465a;
+        gap: 150px;
+        /* background: #ff8686; */
+      }
+
+      .tabLinks span {
+        
+      }
+
+      /* 글씨 밀리는거 수정하기 */
+      .tabLinks span:hover {
+        color: #0b0e5a;
+        font-weight: bold;
+      }
+
+      .tabMenu{
+        display: flex;
+        gap: 100px;
+        padding: 50px;
+        /* justify-content: center; */
+        /* background: #ff6f15; */
+      }
+
+      .tabMenu img{
+        width: 300px;
+        height: 300px;
+      }
+
+      .tabContent{
+        gap: 200px;
+        justify-content: center;
+        align-items: center;
+        /* background: #b915ff; */
+      }
+    </style>
+
 </head>
 <body>
   <header>
-    <img src="./img/logo.png" alt="로고">  <!-- 추후 수정 -->
+    <!-- <img src="../../image/도토리키친/건물사진/main.jpg" alt="main"> -->
     <nav class="menu">
       <a href="jejuhome1.html">Home</a>   <!-- 매장역사, 영업시간 -->
       <a href="jejumenu1.html">Menu</a>   <!-- 메뉴 소개 -->
       <a href="jejureview1.html">Review</a> <!-- 리뷰 페이지 -->
     </nav>
   </header>
-  <!-- 텍스트 탭 메뉴 -->
-  <div class="tabLinks">
-    <span data-tab="best" class="active">Best</span>
-    <span data-tab="meals">Meals</span>
-    <span data-tab="beverage">Beverage</span>
-  </div>
 
-  <!-- 탭 내용 영역 -->
-  <div class="tabMenu">
-    <div class="tabContent active" data-tab="best">
-      <div class="img">
-        <img src="../../image/img.jpg" alt="best1">
+  <!-- 텍스트 탭 메뉴 -->   
+  <div class="tab">
+    <h1>Menu</h1>
+  <div class="tab-box">
+    
+    <div class="tabLinks">
+      <span data-tab="best" class="active">Best</span>
+      <span data-tab="meals">Meals</span>
+      <span data-tab="beverage">Beverage</span>
+    </div>
+
+    <!-- 탭 내용 영역 -->
+    <!-- 구성 수정 - 한 줄에 하나씩 오도록 -->
+    <div class="tabMenu">
+      <div class="tabContent active" data-tab="best">
+        <div class="img">
+          <img src="../../image/도토리키친/음식/도_menu_best1.jpg" alt="best1">
+        </div>
+        <div class="txt">
+          <h2>청귤소바</h2>
+          <p>메뉴에 대한 설명</p>
+          <p>메뉴 가격</p>
+        </div>
+        <div class="img">
+          <img src="../../image/도토리키친/음식/도_menu_best2.jpg" alt="best2">
+        </div>
+        <div class="txt">
+          <h2>청귤소바</h2>
+          <p>메뉴에 대한 설명</p>
+          <p>메뉴 가격</p>
+        </div>
+        <div class="img">
+          <img src="../../image/도토리키친/음식/도_menu_best1.jpg" alt="best1">
+        </div>
+        <div class="txt">
+          <h2>청귤소바</h2>
+          <p>메뉴에 대한 설명</p>
+          <p>메뉴 가격</p>
+        </div>
       </div>
-      <div class="txt">
-        <h2>메뉴이름1</h2>
-        <p>메뉴에 대한 설명</p>
-        <p>메뉴 가격</p>
+      <div class="tabContent" data-tab="meals">
+        <div class="img">
+          <img src="../../image/img.jpg" alt="meals1">
+        </div>
+        <div class="txt">
+          <h2>메뉴이름1</h2>
+          <p>메뉴에 대한 설명</p>
+          <p>메뉴 가격</p>
+        </div>
+      </div>
+      <div class="tabContent" data-tab="beverage">
+        <div class="img">
+          <img src="../../image/img.jpg" alt="beverage">
+        </div>
+        <div class="txt">
+          <h2>메뉴이름1</h2>
+          <p>메뉴에 대한 설명</p>
+          <p>메뉴 가격</p>
+        </div>
       </div>
     </div>
-    <div class="tabContent" data-tab="meals">
-      <div class="img">
-        <img src="../../image/img.jpg" alt="meals1">
-      </div>
-      <div class="txt">
-        <h2>메뉴이름1</h2>
-        <p>메뉴에 대한 설명</p>
-        <p>메뉴 가격</p>
-      </div>
-    </div>
-    <div class="tabContent" data-tab="beverage">
-      <div class="img">
-        <img src="../../image/img.jpg" alt="beverage">
-      </div>
-      <div class="txt">
-        <h2>메뉴이름1</h2>
-        <p>메뉴에 대한 설명</p>
-        <p>메뉴 가격</p>
-      </div>
     </div>
   </div>
 <script src="../../js/tabmenu.js"></script>

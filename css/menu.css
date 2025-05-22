@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+  background: #e7e1dc;
+  color: #0b0e5a;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden; /* ⬅ 화면보다 넓어지는 문제 방지 */
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+header .menu {
+  width: 100%;
+  top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 150px;
+  z-index: 10px;
+}
+
+header > .menu a {
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 26px;
+  color: #0b0e5a;
+}
+
+header > .menu a:hover {
+  color: #819e85;
+}

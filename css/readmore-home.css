@@ -1,149 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-      body{
-        background: #e7e1dc;
-        color: #0b0e5a;
-      }
-      header{
-        width: 100%;
-      }
-      header .menu{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 150px;
-      }
-      header > .menu a{
-        text-decoration: none;
-        font-family: 'Playfair Display', serif;
-        font-weight: 500;
-        font-size: 26px;
-        color: #0b0e5a;
-        justify-content: center;
-      }
-      header > .menu a:hover{
-        color: #819e85;
-      }
-      .main{
-        /* background-color: rgb(230, 123, 123); */
-        margin-top: 20px;
-        padding: 50px 200px;  /* 위아래, 왼쪽오른쪽 */
-      }
-      .main h1{
-        font-size: 60px;
-      }
-      .main img{
-        width: 100%;
-        height: 700px;
-      }
+.main {
+  padding: 50px 200px;
+}
 
-      .imgSlide {
-        display: flex;
-        align-items: center;
-        gap: 20px; /* 텍스트와 이미지 사이 간격 */
-        padding: 20px;
-        margin-left: 15%;
-        margin-top: 150px;
-      }
+.main h1 {
+  margin-top: 20px;
+  font-size: 60px;
+}
 
-      .textBox {
-        flex: 0 0 450px;
-      }
+.main img {
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+}
 
-      .textBox h1{
-        font-size: 40px;
-      }
+.imgSlide {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  margin-top: 150px;
+  padding: 100px 100px;
+  display: flex;
+}
 
-      .slideBox {
-        position: relative;
-        background: #000;
-        width: 500px;
-        height: 400px;
-        flex-shrink: 0;
-      }
+.slideBox {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 600px;
+  height: 700px;
+  margin-top: -100px; 
+  z-index: 2;
+  clip-path: path("M0,200 Q233,-30 466,200 V700 H0 Z");  /* 아치형 모양으로 자르기 */
+}
 
-      .slideBox img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0;
-        transition: opacity 1s ease;
-      }
+.slideBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
 
-      .slideBox img.active {
-        opacity: 1;
-        z-index: 1;
-      }
+.slideBox img.active {
+  opacity: 1;
+  z-index: 1;
+}
 
-      h1,h2,h3{
-        font-family: 'Playfair Display', serif;
-      }
+.textBox {
+  margin-left: 400px; /* slideBox 너비 + 간격 확보 */
+  margin-top: 70px;
+  height: 500px;
+  background: rgb(155, 173, 157);
+  z-index: 1;
+  padding: 60px;
+  box-sizing: border-box;
+  width: 1000px;
+}
 
-      .visit{
-        margin-top: 150px;
-      }
+.textBox h1 {
+  font-size: 50px;
+  margin-top: -20px;
+}
 
-      #visit-txt{
-        width: 100%;
-        text-align: center;
-        font-size: 50px;
-      }
+.textBox h1, p{
+  margin-left: 100px;
+  margin-top: -10px;
+}
 
-      .visit-work{
-        display: flex;
-        gap: 60px;    
-        align-items: center;
-        justify-content: center;
-      }
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
 
-      .day{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-      }
+.visit {
+  max-width: 1050px;
+  margin: 200px auto 0 auto;
+  padding: 0 120px;
+  border-style: double none double none;
+  border-width: 3px;
+  border-color: #0b0e5aa8;
+  background: linear-gradient(to right,
+    rgba(11, 14, 90, 0.03), rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0), rgba(0, 0, 0, 0),
+    rgba(11, 14, 90, 0.03));
+}
 
-      .day h2{
-        margin-top: 45px;
-        margin-bottom: 30px;
-        font-size: 30px;
-      }
+#visit-txt {
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+}
 
-      .day h3{
-        font-size: 20px
-        /* margin-bottom: 12px;
-        margin-top: 12px; */
-      }
+.visit-work {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
 
-      footer{
-        font-family: 'Lexend+Tera', serif;
-        display: flex;
-        gap:150px;
-        padding: 60px 100px;
-        /* text-align: center; */
-        margin-top: 150px;
-      }
+.day {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
-      footer #text{
-        margin-top: -10px;
-        /* background: #000; */
-      }
+.day h2 {
+  margin-top: 45px;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
 
-      .follow img{
-        width: 30px;
-        height: 30px;
-        margin-top: -10px;
-      }
+.day h3 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
 
-      #title{
-        font-size: 18px;
-        font-weight: 400;
-        /* background: #000; */
-      }
+footer {
+  width: 100%;
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  gap: 50px;
+  padding: 60px 100px;
+  margin-top: 150px;  
+}
 
-      #copyright{
-        display: flex;
-        align-items: center;
-      }
+footer #text {
+  margin-top: 10px;
+}
+
+.follow img{
+  width: 30px;
+  height: 30px;
+  margin-left: 100px;
+}
+
+#title {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#copyright {
+  display: flex;
+  align-items: center;
+}
