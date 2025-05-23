@@ -1,147 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도토리 키친</title>
-    <link rel="stylesheet" href="../../css/menu.css"/>
-    <link rel="stylesheet" href="../../css/readmore-menu.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>도토리 키친</title>
+  <link rel="stylesheet" href="../../css/menu.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    <style>
-      .tab{
-        margin-left: 0;
-        padding: 50px;
-        background: #331515;
-      }
+    .tab {
+      padding: 50px;
+    }
 
-      .tab-box{
-        background: #ffa3a3;
-      }
+    .tab h1 {
+      text-align: center;
+      font-size: 70px;
+      color: #0b0e5a;
+      margin: 0;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
 
-      .tab h1{
-        width: 200px;
-        text-align: center;
-        margin-left: 43%;
-        font-size: 60px;
-        background: #000;
-      }
+    .tabLinks {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 150px;
+      font-size: 20px;
+      color: #45465a;
+    }
 
-      .tabLinks{
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
-        margin-bottom: 20px;
-        font-size: 20px;
-        color: #45465a;
-        gap: 150px;
-        /* background: #ff8686; */
-      }
+    .tabLinks span {
+      font-weight: normal;
+      color: #45465a;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
 
-      .tabLinks span {
-        
-      }
+    .tabLinks span.active {
+      font-weight: bold;
+      color: #0b0e5a;
+    }
 
-      /* 글씨 밀리는거 수정하기 */
-      .tabLinks span:hover {
-        color: #0b0e5a;
-        font-weight: bold;
-      }
+    .tabLinks span:hover {
+      color: #0b0e5a;
+    }
 
-      .tabMenu{
-        display: flex;
-        gap: 100px;
-        padding: 50px;
-        /* justify-content: center; */
-        /* background: #ff6f15; */
-      }
+    .tabMenu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: double 2px #0b0e5a;
+      border-right: double 2px #0b0e5a;
+      min-height: 80vh;
+      padding-top: 100px; /* 기존 margin-top 대신 여기에 상단 여백 */
+      margin-left: 20px;
+    }
 
-      .tabMenu img{
-        width: 300px;
-        height: 300px;
-      }
+    .tabContent {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      width: 100%;
+      max-width: 900px;
+    }
 
-      .tabContent{
-        gap: 200px;
-        justify-content: center;
-        align-items: center;
-        /* background: #b915ff; */
-      }
-    </style>
+    .tabContent.active {
+      display: flex;
+    }
 
+    /* 1. beverage 탭 전용 줄 간격 확 줄이기 */
+    .tabContent[data-tab="beverage"] {
+      gap: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* 2. 각 줄(menu-row) 사이 여백 제거 */
+    .tabContent[data-tab="beverage"] .menu-row {
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 100px; /* 텍스트 오른쪽 이동 여백 */
+      align-items: flex-start;
+    }
+
+    /* 3. 텍스트 상단에 붙이기 + 위치 조정 */
+    .tabContent[data-tab="beverage"] .txt {
+      align-self: flex-start;
+      margin-top: 0 !important;
+      padding-left: 20px;
+    }
+
+    /* 4. 혹시 txt 안 요소들 간격도 줄이고 싶다면 */
+    .tabContent[data-tab="beverage"] .txt h2,
+    .tabContent[data-tab="beverage"] .txt p {
+      margin: 2px 0;
+    }
+
+    .menu-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 150px;
+      width: 100%;
+      min-height: 250px; /* 이미지가 없어도 높이 유지 */
+    }
+
+    /* 이미지 감싸는 .menu-item은 없어도 문제 없음 */
+    .menu-item img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* 텍스트가 단독으로 존재할 때를 위한 보완 */
+    .txt {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      height: 100%;
+      flex: 1; /* 이미지가 없어도 txt가 공간 차지 */
+    }
+
+    .txt h2,
+    .txt p {
+      margin: 5px 0;
+    }
+
+  </style>
 </head>
 <body>
   <header>
-    <!-- <img src="../../image/도토리키친/건물사진/main.jpg" alt="main"> -->
     <nav class="menu">
-      <a href="jejuhome1.html">Home</a>   <!-- 매장역사, 영업시간 -->
-      <a href="jejumenu1.html">Menu</a>   <!-- 메뉴 소개 -->
-      <a href="jejureview1.html">Review</a> <!-- 리뷰 페이지 -->
+      <a href="jejuhome1.html">Home</a>
+      <a href="jejumenu1.html">Menu</a>
+      <a href="jejureview1.html">Review</a>
     </nav>
   </header>
 
-  <!-- 텍스트 탭 메뉴 -->   
   <div class="tab">
     <h1>Menu</h1>
-  <div class="tab-box">
-    
     <div class="tabLinks">
       <span data-tab="best" class="active">Best</span>
-      <span data-tab="meals">Meals</span>
+      <span data-tab="side">Side</span>
       <span data-tab="beverage">Beverage</span>
     </div>
 
-    <!-- 탭 내용 영역 -->
-    <!-- 구성 수정 - 한 줄에 하나씩 오도록 -->
     <div class="tabMenu">
       <div class="tabContent active" data-tab="best">
-        <div class="img">
-          <img src="../../image/도토리키친/음식/도_menu_best1.jpg" alt="best1">
+        <div class="menu-row">
+          <div class="menu-item">
+            <img src="../../image/도토리키친/음식/도_menu_best1.jpg" alt="best1" />
+          </div>
+          <div class="txt">
+            <h2>청귤소바</h2>
+            <p>₩8,000</p>
+          </div>
         </div>
-        <div class="txt">
-          <h2>청귤소바</h2>
-          <p>메뉴에 대한 설명</p>
-          <p>메뉴 가격</p>
-        </div>
-        <div class="img">
-          <img src="../../image/도토리키친/음식/도_menu_best2.jpg" alt="best2">
-        </div>
-        <div class="txt">
-          <h2>청귤소바</h2>
-          <p>메뉴에 대한 설명</p>
-          <p>메뉴 가격</p>
-        </div>
-        <div class="img">
-          <img src="../../image/도토리키친/음식/도_menu_best1.jpg" alt="best1">
-        </div>
-        <div class="txt">
-          <h2>청귤소바</h2>
-          <p>메뉴에 대한 설명</p>
-          <p>메뉴 가격</p>
+        <div class="menu-row">
+          <div class="menu-item">
+            <img src="../../image/도토리키친/음식/도_menu_best2.jpg" alt="best2" />
+          </div>
+          <div class="txt">
+            <h2>냉소바</h2>
+            <p>₩8,500</p>
+          </div>
         </div>
       </div>
-      <div class="tabContent" data-tab="meals">
-        <div class="img">
-          <img src="../../image/img.jpg" alt="meals1">
+
+      <div class="tabContent" data-tab="side">
+        <div class="menu-row">
+          <div class="menu-item">
+            <img src="../../image/도토리키친/음식/도_menu_sub1.jpg" alt="side1" />
+          </div>
+          <div class="txt">
+            <h2>톳유부초밥</h2>
+            <p>₩7,500</p>
+          </div>
         </div>
-        <div class="txt">
-          <h2>메뉴이름1</h2>
-          <p>메뉴에 대한 설명</p>
-          <p>메뉴 가격</p>
+        <div class="menu-row">
+          <div class="menu-item">
+            <img src="../../image/도토리키친/음식/도_menu_sub2.jpg" alt="side2" />
+          </div>
+          <div class="txt">
+            <h2>새우감자고로케</h2>
+            <p>₩6,000</p>
+          </div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-item">
+            <img src="../../image/도토리키친/음식/도_menu_sub3.jpg" alt="side3" />
+          </div>
+          <div class="txt">
+            <h2>소바롤</h2>
+            <p>₩6,000</p>
+          </div>
+        </div>
+        <div class="menu-row">
+          <div class="menu-item">
+            <img src="../../image/도토리키친/음식/도_menu_sub4.png" alt="side4" />
+          </div>
+          <div class="txt">
+            <h2>닭껍질교자</h2>
+            <p>₩6,000</p>
+          </div>
         </div>
       </div>
+
       <div class="tabContent" data-tab="beverage">
-        <div class="img">
-          <img src="../../image/img.jpg" alt="beverage">
+        <div class="menu-row">
+          <div class="txt">
+            <h2>청귤에이드</h2>
+            <p>₩6,000</p>
+          </div>
         </div>
-        <div class="txt">
-          <h2>메뉴이름1</h2>
-          <p>메뉴에 대한 설명</p>
-          <p>메뉴 가격</p>
+        <div class="menu-row">
+          <div class="txt">
+            <h2>청귤차</h2>
+            <p>₩5,500</p>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
-<script src="../../js/tabmenu.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tabs = document.querySelectorAll(".tabLinks span");
+      const contents = document.querySelectorAll(".tabContent");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.getAttribute("data-tab");
+
+          contents.forEach((c) => c.classList.remove("active"));
+          tabs.forEach((t) => t.classList.remove("active"));
+
+          tab.classList.add("active");
+          const activeContent = document.querySelector(`.tabContent[data-tab="${target}"]`);
+          if (activeContent) {
+            activeContent.classList.add("active");
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
