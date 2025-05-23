@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="destination.css" />
+</head>
+<body>
+  <aside id="leftBanner" class="banner">
+        <ul>
+            <li><a id="left">Others</a></li>
+            <li><a href="allmap.html">allmap</a></li>
+            <li><a href="geoge.html">Geoge</a></li>
+            <li><a href="jeju.html">Jeju</a></li>
+            <li><a href="incheon.html">Incheon</a></li>
+        </ul>
+  </aside>
+
+  <main id="mapContainer">
+    <div id="map"></div>
+  </main>
+
+  <aside id="rightBanner" class="banner">
+    <ul>
+        <li><a href="busan.go.kr"><img id="logo" src="busan_logo.png"></a></li>
+        <li><a href="#">food</a></li>
+        <li><a href="#">hotel</a></li>
+        <li><a href="#">sightseeing</a></li>
+        <li><a href="#">path</a></li>
+    </ul>
+  </aside>
+
+  <script>
+    function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 35.15, lng: 129.04 }, // 부산 좌표
+    zoom: 12
+  });
+}
+
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbMER9WUqCWwa5elJS2gL8cptzje82DQ0&callback=initMap"
+    async
+    defer
+  ></script>  
+</body>
+</html>
