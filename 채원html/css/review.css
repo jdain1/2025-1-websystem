@@ -43,3 +43,13 @@ ul {
             padding:100px;
             text-align: center;
         }
+        input:focus {
+        outline: none;
+        }
+input {
+        background-color: #e7e1dc;
+        height: 20px;
+        outline: none;
+        border-width: 0 0 1px;
+        border-color: #0b0e5a;
+        }
