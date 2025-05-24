@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도토리 키친</title>
+    <link rel="stylesheet" href="../css/review.css" />
+    <link rel="stylesheet" href="../css/menu.css"/>
+    <link rel="stylesheet" href="../css/readmore-menu.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="menu">
+      <a href="jejuhome1.html">Home</a>   <!-- 매장역사, 영업시간 -->
+      <a href="jejumenu1.html">Menu</a>   <!-- 메뉴 소개 -->
+      <a href="jejureview1.html">Review</a> <!-- 리뷰 페이지 -->
+    </nav>
+  </header>
+  <main>
+    <div id="container">
+        <h1>리뷰작성</h1>
+        <p>연경에 대한<br>별점과 한줄 리뷰를 등록해주세요.</p>
+        <div><strong>★ 평균 별점: <span id="averageRating">0</span></strong></div>
+        <br>
+        <div class="star_rating">
+            <input type="hidden" id="rating" value="1">
+            <span class="star on" data-value="1"></span>
+            <span class="star" data-value="2"></span>
+            <span class="star" data-value="3"></span>
+            <span class="star" data-value="4"></span>
+            <span class="star" data-value="5"></span>
+        </div>
+        <br>
+        <input type="text" id="subject" placeholder="한줄 리뷰를 입력하세요" autofocus>
+        <button onclick="newRegister(); return false;">등록</button>
+        <hr>
+        <ul id="itemList"></ul>
+    </div>
+
+    <script src="../js/review.js"></script>
+  </main>
+
+</body>
+</html>
