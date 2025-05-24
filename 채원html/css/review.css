@@ -34,10 +34,12 @@ ul {
             flex-grow: 1;
             padding: 0 10px;
         }
-        .delete-btn {
-            background: lightgray;
+        button{
+            background: #0b0e5a;
             border: none;
             cursor: pointer;
+            color:#e7e1dc;
+            border-radius: 10%;
         }
         main{
             padding:100px;
