@@ -1,0 +1,20 @@
+document.addEventListener('mousemove', function(e) {
+  const trail = document.getElementById("mouseTrail");
+  trail.style.left = e.clientX + "px";
+  trail.style.top = e.clientY + "px";
+});
+
+function goResult() {
+  const username = getCookie('currentUser');
+  if (!username) {
+    alert("로그인 정보가 없습니다.");
+    return;
+  }
+  window.location.href = "recommend.html?username=" + encodeURIComponent(username);
+}
+
+function getCookie(name) {
+  const value = "; " + document.cookie;
+  const parts = value.split("; " + name + "=");
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
