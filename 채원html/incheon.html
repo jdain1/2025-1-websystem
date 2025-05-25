@@ -38,6 +38,26 @@
     zoom: 11.5
   });
 }
+      document.getElementById("pathLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          const userLat = position.coords.latitude;
+          const userLng = position.coords.longitude;
+
+          const incheonLat = 37.47;
+          const incheonLng = 126.603;
+
+          const directionURL = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${incheonLat},${incheonLng}&travelmode=driving`;
+
+          window.open(directionURL, "_blank");
+        }, function (error) {
+          alert("위치 정보를 가져올 수 없습니다.");
+        });
+      } else {
+        alert("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
+      }
+    });
 
   </script>
   <script
