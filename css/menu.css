@@ -3,6 +3,7 @@
 body {
   background: #e7e1dc;
   color: #0b0e5a;
+  width: 100vw;
   margin: 0;
   padding: 0;
   box-sizing: border-box;

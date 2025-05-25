@@ -64,6 +64,7 @@
   margin-left: 400px; /* slideBox 너비 + 간격 확보 */
   margin-top: 100px;
   height: 500px;
+  line-height: 2;
   background: rgb(155, 173, 157);
   z-index: 1;
   padding: 60px;
@@ -130,29 +131,48 @@ h1, h2, h3 {
 
 footer {
   width: 100%;
-  font-family: 'Playfair Display', serif;
   display: flex;
-  gap: 50px;
+  justify-content: space-between; /* 좌우 + 사이 정렬 */
+  align-items: flex-start;
   padding: 60px 100px;
-  margin-top: 150px;  
+  gap: 30px;
+  box-sizing: border-box;
+  margin-top: 50px;
 }
 
-footer #text {
-  margin-top: 10px;
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 150px;
+  gap: 10px;
 }
 
-.follow img{
-  width: 30px;
-  height: 30px;
-  margin-left: 100px;
-}
-
-#title {
+.footer-title {
   font-size: 18px;
   font-weight: 400;
+  margin: 0;
+  color: #0b0e5a;
+  margin-bottom: 10px;
 }
 
-#copyright {
-  display: flex;
-  align-items: center;
+.footer-text {
+  color: #0b0e5a;
+  margin: 0;
+}
+
+.footer-block img {
+  width: 30px;
+  height: 30px;
+}
+
+.copyright {
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.copyright p {
+  margin: 0;
+  color: #0b0e5a;
 }
