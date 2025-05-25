@@ -44,8 +44,8 @@
 | ------------------ | :----------: | :----------: |
 | login.html         | [0]          | [ ]          |
 | makeid.html        | [0]          | [ ]          |
-| recommend.html     | [ ]          | [ ]          |
-| allmap.html        | [ ]          | [ ]          |
+| recommend.html     | [0]          | [ ]          |
+| allmap.html        | [0]          | [ ]          |
 | destination.html   | [ ]          | [ ]          |
 | review.html        | [ ]          | [ ]          |
 - [ ] name.html
