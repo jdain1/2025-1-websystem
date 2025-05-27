@@ -17,7 +17,9 @@
       const users = getUsers();
 
       if (users[username] && users[username] === pw) {
-        document.cookie = `currentUser=${username}`;
+        const expiry = new Date();
+        expiry.setDate(expiry.getDate() + 7); // 7일 유지
+        document.cookie = `currentUser=${username}; expires=${expiry.toUTCString()}; path=/`;
         window.location.href = "preference.html";
       } else {
         alert("존재하지 않습니다");
