@@ -7,7 +7,7 @@ body {
 
 .banner {
   width: 200px;
-  background-color: #f0f0f0;
+  background-color: #e7e1dc;
   display: flex;
   align-items: center;      
   justify-content: center; 
@@ -55,7 +55,7 @@ a{
     color:#0b0e5a;
 }
 
-#jejulogo {
+#logo {
   max-height: 100px;
   object-fit: contain;
   margin-bottom: 50px;

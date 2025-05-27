@@ -1,0 +1,57 @@
+ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .star_rating {
+            display: flex;
+            justify-content: center;
+        }
+        .star {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            background: url('../image/bstar.png') no-repeat center;
+            background-size: cover;
+            cursor: pointer;
+        }
+        .star.on {
+            background: url('../image/ystar.png') no-repeat center;
+            background-size: cover;
+        }
+        .review-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .review-rating {
+            width: 80px;
+            font-weight: bold;
+        }
+        .review-text {
+            flex-grow: 1;
+            padding: 0 10px;
+        }
+        button{
+            background: #0b0e5a;
+            border: none;
+            cursor: pointer;
+            color:#e7e1dc;
+            border-radius: 10%;
+        }
+        main{
+            padding:100px;
+            text-align: center;
+        }
+        input:focus {
+        outline: none;
+        }
+input {
+        background-color: #e7e1dc;
+        height: 20px;
+        outline: none;
+        border-width: 0 0 1px;
+        border-color: #0b0e5a;
+        }
