@@ -12,7 +12,9 @@
     }
 
     function saveUsers(users) {
-      document.cookie = `users=${encodeURIComponent(JSON.stringify(users))}; path=/`;
+      const expiry = new Date();
+      expiry.setDate(expiry.getDate() + 30); // 30일 유지
+      document.cookie = `users=${encodeURIComponent(JSON.stringify(users))}; expires=${expiry.toUTCString()}; path=/`;
     }
 
     function register() {
