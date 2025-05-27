@@ -53,7 +53,7 @@ document.addEventListener('mousemove', function(e) {
         alert("로그인 정보가 없습니다.");
         return;
       }
-      window.location.href = "../login/recommend.html?username=" + encodeURIComponent(username);
+      window.location.href = "recommend.html?username=" + encodeURIComponent(username);
     }
 
     function getCookie(name) {
