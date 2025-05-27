@@ -1,17 +1,19 @@
-const tabs = document.querySelectorAll('.tabLinks span');
-const contents = document.querySelectorAll('.tabContent');
+document.addEventListener("DOMContentLoaded", function () {
+    const tabs = document.querySelectorAll(".tabLinks span");
+    const contents = document.querySelectorAll(".tabContent");
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-    const target = tab.getAttribute('data-tab');
+    tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-tab");
 
-    // 탭 텍스트 스타일 처리
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
+        contents.forEach((c) => c.classList.remove("active"));
+        tabs.forEach((t) => t.classList.remove("active"));
 
-    // 콘텐츠 표시 처리
-    contents.forEach(c => {
-        c.classList.toggle('active', c.getAttribute('data-tab') === target);
+        tab.classList.add("active");
+        const activeContent = document.querySelector(`.tabContent[data-tab="${target}"]`);
+        if (activeContent) {
+        activeContent.classList.add("active");
+        }
     });
     });
 });
