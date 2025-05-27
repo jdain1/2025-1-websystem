@@ -5,135 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>도토리 키친</title>
   <link rel="stylesheet" href="../../css/menu.css">
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    .tab {
-      padding: 50px;
-    }
-
-    .tab h1 {
-      text-align: center;
-      font-size: 70px;
-      color: #0b0e5a;
-      margin: 0;
-      margin-top: 30px;
-      margin-bottom: 50px;
-    }
-
-    .tabLinks {
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      gap: 150px;
-      font-size: 20px;
-      color: #45465a;
-    }
-
-    .tabLinks span {
-      font-weight: normal;
-      color: #45465a;
-      cursor: pointer;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .tabLinks span.active {
-      font-weight: bold;
-      color: #0b0e5a;
-    }
-
-    .tabLinks span:hover {
-      color: #0b0e5a;
-    }
-
-    .tabMenu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-left: double 2px #0b0e5a;
-      border-right: double 2px #0b0e5a;
-      min-height: 80vh;
-      padding-top: 100px; /* 기존 margin-top 대신 여기에 상단 여백 */
-      margin-left: 20px;
-    }
-
-    .tabContent {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 60px;
-      width: 100%;
-      max-width: 900px;
-    }
-
-    .tabContent.active {
-      display: flex;
-    }
-
-    /* 1. beverage 탭 전용 줄 간격 확 줄이기 */
-    .tabContent[data-tab="beverage"] {
-      gap: 0 !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-
-    /* 2. 각 줄(menu-row) 사이 여백 제거 */
-    .tabContent[data-tab="beverage"] .menu-row {
-      margin: 0 !important;
-      padding: 0 !important;
-      gap: 100px; /* 텍스트 오른쪽 이동 여백 */
-      align-items: flex-start;
-    }
-
-    /* 3. 텍스트 상단에 붙이기 + 위치 조정 */
-    .tabContent[data-tab="beverage"] .txt {
-      align-self: flex-start;
-      margin-top: 0 !important;
-      padding-left: 20px;
-    }
-
-    /* 4. 혹시 txt 안 요소들 간격도 줄이고 싶다면 */
-    .tabContent[data-tab="beverage"] .txt h2,
-    .tabContent[data-tab="beverage"] .txt p {
-      margin: 2px 0;
-    }
-
-    .menu-row {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 150px;
-      width: 100%;
-      min-height: 250px; /* 이미지가 없어도 높이 유지 */
-    }
-
-    /* 이미지 감싸는 .menu-item은 없어도 문제 없음 */
-    .menu-item img {
-      width: 250px;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    /* 텍스트가 단독으로 존재할 때를 위한 보완 */
-    .txt {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: left;
-      height: 100%;
-      flex: 1; /* 이미지가 없어도 txt가 공간 차지 */
-    }
-
-    .txt h2,
-    .txt p {
-      margin: 5px 0;
-    }
-
-  </style>
+  <link rel="stylesheet" href="../../css/readmore-menu.css">
 </head>
 <body>
   <header>
@@ -156,7 +28,7 @@
       <div class="tabContent active" data-tab="best">
         <div class="menu-row">
           <div class="menu-item">
-            <img src="../../image/도토리키친/음식/도_menu_best1.jpg" alt="best1" />
+            <img src="../../image/제주도/도토리키친/menu/도_menu_best1.jpg" alt="best1" />
           </div>
           <div class="txt">
             <h2>청귤소바</h2>
@@ -165,7 +37,7 @@
         </div>
         <div class="menu-row">
           <div class="menu-item">
-            <img src="../../image/도토리키친/음식/도_menu_best2.jpg" alt="best2" />
+            <img src="../../image/제주도/도토리키친/menu/도_menu_best2.jpg" alt="best2" />
           </div>
           <div class="txt">
             <h2>냉소바</h2>
@@ -177,7 +49,7 @@
       <div class="tabContent" data-tab="side">
         <div class="menu-row">
           <div class="menu-item">
-            <img src="../../image/도토리키친/음식/도_menu_sub1.jpg" alt="side1" />
+            <img src="../../image/제주도/도토리키친/menu/도_menu_sub1.jpg" alt="side1" />
           </div>
           <div class="txt">
             <h2>톳유부초밥</h2>
@@ -186,7 +58,7 @@
         </div>
         <div class="menu-row">
           <div class="menu-item">
-            <img src="../../image/도토리키친/음식/도_menu_sub2.jpg" alt="side2" />
+            <img src="../../image/제주도/도토리키친/menu/도_menu_sub2.jpg" alt="side2" />
           </div>
           <div class="txt">
             <h2>새우감자고로케</h2>
@@ -195,7 +67,7 @@
         </div>
         <div class="menu-row">
           <div class="menu-item">
-            <img src="../../image/도토리키친/음식/도_menu_sub3.jpg" alt="side3" />
+            <img src="../../image/제주도/도토리키친/menu/도_menu_sub3.jpg" alt="side3" />
           </div>
           <div class="txt">
             <h2>소바롤</h2>
@@ -204,7 +76,7 @@
         </div>
         <div class="menu-row">
           <div class="menu-item">
-            <img src="../../image/도토리키친/음식/도_menu_sub4.png" alt="side4" />
+            <img src="../../image/제주도/도토리키친/menu/도_menu_sub4.png" alt="side4" />
           </div>
           <div class="txt">
             <h2>닭껍질교자</h2>

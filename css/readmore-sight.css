@@ -78,7 +78,7 @@ overflow-x: hidden; /* ⬅ 화면보다 넓어지는 문제 방지 */
 
 .dots {
   position: absolute;
-  bottom: 10px;
+  bottom: 55px;
   left: 40%;
   transform: translateX(-50%);
   display: flex;
