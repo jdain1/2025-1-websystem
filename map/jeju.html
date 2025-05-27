@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/destination.css" />
+</head>
+<body>
+  <aside id="leftBanner" class="banner">
+    <ul>
+      <li><a id="left">Others</a></li>
+      <li><a href="allmap.html">allmap</a></li>
+      <li><a href="geoje.html">Geoje</a></li>
+      <li><a href="busan.html">Busan</a></li>
+      <li><a href="incheon.html">Incheon</a></li>
+    </ul>
+  </aside>
+
+  <main id="mapContainer">
+    <div id="map"></div>
+  </main>
+
+  <aside id="rightBanner" class="banner">
+    <ul>
+      <li><a href="https://www.jeju.go.kr" target="_blank"><img id="logo" src="../image/jeju_logo.png"></a></li>
+      <li><a href="jejufood.html">food</a></li>
+      <li><a href="jejuhotel.html">hotel</a></li>
+      <li><a href="jejusight.html">sightseeing</a></li>
+      <li><a href="#" id="pathLink">path</a></li>
+    </ul>
+  </aside>
+
+  <script>
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 33.4, lng: 126.6 }, // 제주 좌표
+        zoom: 11.1
+      });
+    }
+
+    document.getElementById("pathLink").addEventListener("click", function (e) {
+      e.preventDefault();
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+          const userLat = position.coords.latitude;
+          const userLng = position.coords.longitude;
+
+          const jejuLat = 33.4996;
+          const jejuLng = 126.5312;
+
+          const directionURL = `https://www.google.com/maps/dir/?api=1&origin=${userLat},${userLng}&destination=${jejuLat},${jejuLng}&travelmode=driving`;
+
+          window.open(directionURL, "_blank");
+        }, function (error) {
+          alert("위치 정보를 가져올 수 없습니다.");
+        });
+      } else {
+        alert("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
+      }
+    });
+  </script>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbMER9WUqCWwa5elJS2gL8cptzje82DQ0&callback=initMap"
+    async
+    defer
+  ></script>
+</body>
+</html>
