@@ -12,9 +12,11 @@
     }
 
     function saveUsers(users) {
-      const expiry = new Date();
+      var expiry = new Date();
       expiry.setDate(expiry.getDate() + 30); // 30일 유지
-      document.cookie = `users=${encodeURIComponent(JSON.stringify(users))}; expires=${expiry.toUTCString()}; path=/`;
+      document.cookie = "users=" + encodeURIComponent(JSON.stringify(users)) +
+                        "; expires=" + expiry.toUTCString() +
+                        "; path=/";
     }
 
     function register() {
@@ -24,7 +26,7 @@
 
       if (users[username]) {
         alert("이미 존재하는 아이디입니다.");
-        window.location.href = "../login/makeid.html";
+        window.location.href = "makeid.html";
         return;
       }
 
@@ -32,7 +34,7 @@
       saveUsers(users);
 
       alert("회원가입이 완료되었습니다.");
-      window.location.href = "../login/login.html";
+      window.location.href = "login.html";
     }
   </script>
 </head>

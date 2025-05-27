@@ -41,11 +41,11 @@ function createRipple(e) {
       trail.style.top = `${e.clientY}px`;
     });
 //유저네임전달
-document.addEventListener('mousemove', function(e) {
-      const trail = document.getElementById("mouseTrail");
-      trail.style.left = e.clientX + "px";
-      trail.style.top = e.clientY + "px";
-    });
+function getCookie(name) {
+      const value = "; " + document.cookie;
+      const parts = value.split("; " + name + "=");
+      if (parts.length === 2) return parts.pop().split(";").shift();
+    }
 
     function goResult() {
       const username = getCookie('currentUser');
@@ -56,8 +56,4 @@ document.addEventListener('mousemove', function(e) {
       window.location.href = "recommend.html?username=" + encodeURIComponent(username);
     }
 
-    function getCookie(name) {
-      const value = "; " + document.cookie;
-      const parts = value.split("; " + name + "=");
-      if (parts.length === 2) return parts.pop().split(";").shift();
-    }
+    
