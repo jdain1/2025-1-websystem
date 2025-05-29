@@ -3,6 +3,7 @@
 
 body {
   margin: 0;
+  padding: 0;
   background-color: #e7e1dc;
 }
 
@@ -99,20 +100,20 @@ body {
 }
 
 footer {
-    margin-left: -8px;
-    margin-bottom: -10px;
-    margin-top: 180px;
-    width: 100vw;
-    height: 250px;
+    margin-top: auto;
+    width: 100%;
+    min-height: 250px;
     background: #0b0e5a;
+    box-sizing: border-box;
 }
 
 footer h1 {
     font-family: Impact;
     display: flex;
     justify-content: center;
-    gap: 250px;
+    gap: 10%;
     font-size: 40px;
+    flex-wrap: wrap; /* 넘치면 줄바꿈 */
 }
 
 footer h1 a {
@@ -130,8 +131,9 @@ footer span {
 }
 
 footer p {
-    margin-left: 480px;
-    margin-top: 100px;
+    padding: 0;
+    margin-left: 32%;
+    margin-top: 80px;
     color: #e7e1dc;
     font-family: "Lexend Tera", sans-serif;
     font-weight: 200;
