@@ -102,7 +102,7 @@ overflow-x: hidden; /* ⬅ 화면보다 넓어지는 문제 방지 */
 
 
 .textBox {
-  margin-left: 650px; /* slideBox 너비 + 간격 확보 */
+  margin-left: 550px; /* slideBox 너비 + 간격 확보 */
   margin-top: 70px;
   height: 500px;
   line-height: 2;
