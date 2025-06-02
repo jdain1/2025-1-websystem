@@ -33,6 +33,11 @@ overflow-x: hidden; /* ⬅ 화면보다 넓어지는 문제 방지 */
   object-fit: cover;
 }
 
+.back-button > img{
+  width: 10%;
+  height: 10%;
+}
+
 .imgSlide {
   position: relative;
   width: 100%;
