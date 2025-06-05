@@ -108,9 +108,15 @@ overflow-x: hidden; /* ⬅ 화면보다 넓어지는 문제 방지 */
 
 .textBox {
   margin-left: 550px; /* slideBox 너비 + 간격 확보 */
+<<<<<<< HEAD
   margin-top: 20px;
+=======
+  margin-top: -80px;
+  display: flex;
+  align-items: center;
+>>>>>>> f1beacfabbf35ac35531aad0b33b43952872eb7b
   height: 500px;
-  line-height: 2;
+  line-height: 3;
   z-index: 1;
   padding: 60px;
   box-sizing: border-box;
